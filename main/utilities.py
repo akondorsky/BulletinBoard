@@ -1,5 +1,7 @@
-from django.conf import settings
+from datetime import datetime
+from os.path import splitext
 
 
-host = settings.ALLOWED_HOSTS[0]
+def get_timestamp_path(instance, filename):
+    return '%s%s' % (datetime.now().timestamp(), splitext(filename))
 
